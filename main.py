@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import ttk
 from tkinter import messagebox
 
+
 def convert(value, from_unit, in_unit):
     """Функция конвертации, использует вложенные словари"""
     convertions = \
@@ -18,6 +19,13 @@ def convert(value, from_unit, in_unit):
                     'kg': 1.0,
                     'g': 1000,
                     'mg': 10**6,
+                },
+            'time':
+                {
+                    'sec': 1.0,
+                    'min': 1/60.0,
+                    'hours': 1/3600.0,
+                    'day': 1/86400.0
                 }
         }
 
@@ -54,11 +62,11 @@ entry_value.pack()
 
 # Создание двух выпадающих списков
 tk.Label(root, text="Из:").pack(pady=(20, 0))
-combo_from = ttk.Combobox(root, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg'])
+combo_from = ttk.Combobox(root, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg', 'sec', 'min', 'hours', 'day'])
 combo_from.pack()
 
 tk.Label(root, text="В:").pack(pady=(20, 0))
-combo_in = ttk.Combobox(root, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg'])
+combo_in = ttk.Combobox(root, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg', 'sec', 'min', 'hours', 'day'])
 combo_in.pack()
 
 # Создание кнопки
