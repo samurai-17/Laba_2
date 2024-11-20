@@ -53,29 +53,33 @@ root = tk.Tk()
 root.title("Конвертер единиц")
 root.geometry("250x350")
 
+frame = tk.Frame(root)
+frame.pack(expand=True)
+
 # Создание надписи над полем
-tk.Label(root, text="Введите значение:").pack()
+tk.Label(frame, text="Введите значение:").pack()
 
 # Создание поля для значения
-entry_value = tk.Entry(root)
+entry_value = tk.Entry(frame)
 entry_value.pack()
 
 # Создание двух выпадающих списков
-tk.Label(root, text="Из:").pack(pady=(20, 0))
-combo_from = ttk.Combobox(root, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg', 'sec', 'min', 'hours', 'day'])
+tk.Label(frame, text="Из:").pack(pady=(20, 0))
+combo_from = ttk.Combobox(frame, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg', 'sec', 'min', 'hours', 'day'])
 combo_from.pack()
 
-tk.Label(root, text="В:").pack(pady=(20, 0))
-combo_in = ttk.Combobox(root, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg', 'sec', 'min', 'hours', 'day'])
+tk.Label(frame, text="В:").pack(pady=(20, 0))
+combo_in = ttk.Combobox(frame, values=['m', 'cm', 'mm', 'km', 'kg', 'g', 'mg', 'sec', 'min', 'hours', 'day'])
 combo_in.pack()
 
 # Создание кнопки
-button = tk.Button(root, text="Конвертировать", font=30, command=performance)
+button = tk.Button(frame, text="Конвертировать", font=30, command=performance)
 button.pack(pady=(20, 0))
 
 # Создание финальной строки
-result_label = tk.Label(root, text="Результат:")
+result_label = tk.Label(frame, text="Результат:")
 result_label.pack(pady=(20, 0))
+
 
 # Запуск приложения
 root.mainloop()
